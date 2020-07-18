@@ -1,0 +1,24 @@
+﻿<Window x:Class="FluentIXml.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FluentIXml"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+	<StackPanel>
+		<StackPanel>
+		<TextBox FontSize="24" Text="{Binding Nesto, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
+			<Validation.ErrorTemplate>
+				<ControlTemplate>
+					<StackPanel>
+						<AdornedElementPlaceholder/>
+						<Label FontSize="24" Content="{Binding [0].ErrorContent}"/>
+					</StackPanel>
+				</ControlTemplate>
+			</Validation.ErrorTemplate>
+		</TextBox>
+		</StackPanel>
+		<Button FontSize="24">Bla</Button>
+	</StackPanel>
+</Window>
